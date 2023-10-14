@@ -1,0 +1,144 @@
+/* Reset de algunas propiedades básicas */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.sk-three-bounce .sk-child {
+    background-color: #007bff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: sk-bounce 1.4s infinite ease-in-out both;
+}
+
+.sk-three-bounce .sk-bounce1 {
+    animation-delay: -0.32s;
+}
+
+.sk-three-bounce .sk-bounce2 {
+    animation-delay: -0.16s;
+}
+
+@keyframes sk-bounce {
+    0%, 100% { 
+        transform: scale(0);
+    } 
+    50% { 
+        transform: scale(1.0);
+    }
+}
+
+#main-wrapper {
+    background-color: #fff;
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.nav-header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 2px 0;
+}
+
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header-left .dashboard_bar {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+}
+
+.deznav {
+    background-color: #2c2c2c;
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.deznav .metismenu {
+    list-style-type: none;
+}
+
+.deznav .metismenu li {
+    padding: 10px 20px;
+}
+
+.deznav .metismenu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.tile-icon {
+    font-size: 24px;
+}
+
+.tile-text {
+    display: flex;
+    align-items: center;
+}
+
+.tile-text span {
+    font-size: 24px;
+}
+
+.tile-text small {
+    display: block;
+}
+
+
