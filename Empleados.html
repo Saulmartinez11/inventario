@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inventarios de Bodeguero</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+<body>
+
+    <!--*******************
+    Inicio del precargador
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+      FInal del precargador
+    ********************-->
+
+    <!--**********************************
+      Inicio de la envoltura principal
+    ***********************************-->
+    <div id="main-wrapper">
+
+       <!--**********************************
+          Inicio del encabezado de navegación
+        ***********************************-->
+        <div class="nav-header">
+            <a href="Inicio.html" class="brand-logo">
+                <img src="images/226552679_310725093761119_2727354437764972625_n.jpg" width="140px" height="80">
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Final del encabezado de navegación
+        ***********************************-->
+		
+		<!--**********************************
+               Inicio del encabezado
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Empleados
+                            </div>
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+							
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+									
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                      </svg>
+                                        
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="Usuario.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2"> Perfil </span>
+                                    </a>
+                                    <a href="index.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2"> Cerrar sesión </span>
+                                    </a>
+                                </div>
+                            </li>
+							<li class="dropdown schedule-event primary">
+								<a href="javascript:void(0)" class="btn btn-primary btn-rounded event-btn">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="scale5 me-0 mb-0 me-sm-2 mb-sm-1"><path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 2V6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 2V6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 10H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 
+								</a>
+							</li>
+                        </ul>
+					</div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+                 Fin del encabezado
+        ***********************************-->
+
+        <!--**********************************
+            Inicio de la barra lateral
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                          </svg>
+							<span class="nav-text">Inventarios de Bodeguero</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="Inicio.html">Inicio</a></li>
+							<li><a href="Usuarios.html">Usuarios</a></li>
+							<li><a href="Categorias.html">Categorias</a></li>
+							<li><a href="Lista-control.html">Lista control</a></li>
+							<li><a href="Empleados.html">Empleados</a></li>
+							<li><a href="Lista-control-empleados.html">Listado de control de empleados</a></li>
+                            <li><a href="Productos.html">Productos</a></li>
+						</ul>
+                    </li>
+					<li>
+						<a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                              </svg>
+							<span class="nav-text">Categorias</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="Categorias.html">Tipo de categorias</a></li>
+							<li><a href="Añadir-categorias.html">Añadir categoria</a></li>
+						</ul>
+                    </li>
+					<li>
+						<a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+							<span class="nav-text">Listados usuarios</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="Lista-control.html">Controles</a></li>
+							<li><a href="Añadir-control.html">Listar control</a></li>
+						</ul>
+                    </li>
+					<li>
+						<a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                              </svg>
+							<span class="nav-text">Empleados</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="Empleados.html">Empleados</a></li>
+							<li><a href="Añadir-empleados.html">Añadir empleados</a></li>
+						</ul>
+                    </li>
+                    <li>
+						<a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-video2" viewBox="0 0 16 16">
+                                <path d="M10 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                                <path d="M2 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2ZM1 3a1 1 0 0 1 1-1h2v2H1V3Zm4 10V2h9a1 1 0 0 1 1 1v9c0 .285-.12.543-.31.725C14.15 11.494 12.822 10 10 10c-3.037 0-4.345 1.73-4.798 3H5Zm-4-2h3v2H2a1 1 0 0 1-1-1v-1Zm3-1H1V8h3v2Zm0-3H1V5h3v2Z"/>
+                              </svg>
+							<span class="nav-text">Usuario</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="Usuario.html">Usuario</a></li>
+                            <li><a href="Usuarios.html">Usuarios</a></li>
+							<li><a href="Editar-usuario.html">Editar usuario</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+                            <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+                            <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+                          </svg>
+							<span class="nav-text">Control de empleados</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="Lista-control-empleados.html">Controles empleados</a></li>
+                            <li><a href="Añadir-control-empleados.html">Listar de control</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0);" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                            <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                          </svg>
+                        <span class="nav-text"> Productos </span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="Productos.html"> Productos</a></li>
+                        <li><a href="Añadir_producto.html"> Añadir producto </a></li>
+                    </ul>
+                </li>
+                </ul>
+			</div>
+        </div>
+        <!--**********************************
+            Final de la barra lateral
+        ***********************************-->
+		
+		<!--**********************************
+                 Lista de eventos
+        ***********************************-->
+		
+		<div class="event-sidebar dz-scroll active" id="eventSidebar">
+			<div class="card shadow-none rounded-0 bg-transparent h-auto mb-0"></div>
+			    <div class="card-body text-center event-calender pb-2">
+					<input type='text' class="form-control d-none" id='datetimepicker1' />
+				</div>
+			<!--</div>-->
+		</div>
+		
+		<!--**********************************
+            Inicio del cuerpo del contenido
+        ***********************************-->
+        <div class="content-body">
+            <!-- barra de navegación -->
+			<div class="container-fluid">
+                <div class="row mb-5 align-items-center">
+					<div class="col-xl-3 mb-4 mb-xl-0">
+						<a href="Añadir-empleados.html" class="btn btn-primary light btn-lg d-block rounded shadow px-2"> Agregar Empleado </a>
+					</div>
+					<div class="col-xl-9">
+						<div class="card m-0 ">
+							<div class="card-body py-3 py-md-2">
+								<div class="row align-items-center">
+									<div class="col-md-5 mb-3 mb-md-0">
+										<div class="media align-items-end">
+											<span class="me-2 mb-1">
+												<svg width="24" height="24" class="user-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0)">
+													<path d="M21 24H3C2.73478 24 2.48043 23.8946 2.29289 23.7071C2.10536 23.5196 2 23.2652 2 23V22.008C2.00287 20.4622 2.52021 18.9613 3.47044 17.742C4.42066 16.5227 5.74971 15.6544 7.248 15.274C7.46045 15.2219 7.64959 15.1008 7.78571 14.9296C7.92182 14.7583 7.9972 14.5467 8 14.328V13.322L6.883 12.206C6.6032 11.9313 6.38099 11.6036 6.22937 11.2419C6.07776 10.8803 5.99978 10.4921 6 10.1V5.96201C6.01833 4.41693 6.62821 2.93765 7.70414 1.82861C8.78007 0.719572 10.2402 0.0651427 11.784 5.16174e-06C12.5992 -0.00104609 13.4067 0.158488 14.1603 0.469498C14.9139 0.780509 15.5989 1.2369 16.1761 1.81263C16.7533 2.38835 17.2114 3.07213 17.5244 3.82491C17.8373 4.5777 17.999 5.38476 18 6.20001V10.1C17.9997 10.4949 17.9204 10.8857 17.7666 11.2495C17.6129 11.6132 17.388 11.9426 17.105 12.218L16 13.322V14.328C16.0029 14.5469 16.0784 14.7586 16.2147 14.9298C16.351 15.1011 16.5404 15.2221 16.753 15.274C18.251 15.6548 19.5797 16.5232 20.5298 17.7424C21.4798 18.9617 21.997 20.4624 22 22.008V23C22 23.2652 21.8946 23.5196 21.7071 23.7071C21.5196 23.8946 21.2652 24 21 24ZM4 22H20C19.9954 20.8996 19.6249 19.8319 18.9469 18.9651C18.2689 18.0983 17.3219 17.4816 16.255 17.212C15.6125 17.0494 15.0423 16.6779 14.6341 16.1558C14.2259 15.6337 14.0028 14.9907 14 14.328V12.908C14.0001 12.6428 14.1055 12.3885 14.293 12.201L15.703 10.792C15.7965 10.7026 15.8711 10.5952 15.9221 10.4763C15.9731 10.3574 15.9996 10.2294 16 10.1V6.20001C16.0017 5.09492 15.5671 4.03383 14.7907 3.24737C14.0144 2.46092 12.959 2.01265 11.854 2.00001C10.8264 2.04117 9.85379 2.47507 9.1367 3.21225C8.41962 3.94943 8.01275 4.93367 8 5.96201V10.1C7.99979 10.2266 8.0249 10.352 8.07384 10.4688C8.12278 10.5856 8.19458 10.6914 8.285 10.78L9.707 12.2C9.89455 12.3875 9.99994 12.6418 10 12.907V14.327C9.99724 14.9896 9.77432 15.6325 9.3663 16.1545C8.95827 16.6766 8.3883 17.0482 7.746 17.211C6.67872 17.4804 5.73137 18.0972 5.05318 18.9642C4.37498 19.8313 4.00447 20.8993 4 22Z" fill="black"/>
+													</g>
+													<defs>
+													<clipPath id="clip0">
+													<rect width="24" height="24" fill="white"/>
+													</clipPath>
+													</defs>
+												</svg>
+											</span>
+											<div class="media-body ms-1">
+                                                <p class="mb-1 fs-14">Total empleados</p>
+                                                <div id="total_Empleados">Cargando...</div>
+                                            </div>
+										</div>
+									</div>
+								</div>							
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+					<div class="col-lg-12">
+						<div class="table-responsive">
+							<table id="example5" class=" display mb-4 table-responsive-xl ">
+								<div class="col-lg-3 mb-3">
+									<input type="text" id="searchInput" class="form-control" placeholder="Buscar empleado...">
+								</div>								
+								<thead>
+									<tr>
+										<th>
+											<div class="checkbox me-0 align-self-center">
+												<div class="form-check custom-checkbox checkbox-info">
+													
+												</div>
+											</div>
+										</th>
+										<th> Id Empleado</th>
+										<th> Primer Nombre </th>
+										<th> Segundo Nombre </th>
+										<th> Primer Apellido </th>
+										<th> Segundo Apellido </th>
+										<th> Edad </th>
+										<th> Cargo </th>
+									    </tr>
+								</thead>
+								<tbody id="tablaEmpleados">
+								</tbody>
+							</table>
+							
+						</div>
+						<div class="pagination-buttons mt-3">
+							<button id="prevBtn" onclick="changePage(-1)" class="btn btn-outline-primary">Atrás</button>
+							<button id="nextBtn" onclick="changePage(1)" class="btn btn-outline-primary">Siguiente</button>
+						</div>
+                    </div>
+				</div>
+            </div>
+        </div>
+		  
+        <!--**********************************
+            Fin del cuerpo del contenido
+        ***********************************-->
+
+    </div>
+    <!--**********************************
+        Final de la envoltura principal
+    ***********************************-->
+<!--**********************************
+        Modal para añadir
+    ***********************************-->
+	<div class="modal" tabindex="-1" role="dialog" id="editModal">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title">Editar Empleado</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btn-cerrar-modal">
+                <span aria-hidden="true">&times;</span>
+              </button>            
+			</div>
+			<div class="modal-body">
+            <div class="alert alert-danger" role="alert" id="error-message" style="display:none;"></div>
+			  <form id="editForm" method="POST" action="php/editar_empleado_control.php">
+				<input type="hidden" name="id_empleado" id="id_empleado">
+				<label for="firstName">Primer Nombre:</label>
+				<input type="text" class="form-control" name="primer_nombre_empleado" id="primer_nombre_empleado">
+				<label for="firstName">Segundo Nombre:</label>
+				<input type="text" class="form-control" name="segundo_nombre_empleado" id="segundo_nombre_empleado" >
+				<label for="firstName">Primer Apellido:</label>
+				<input type="text" class="form-control" name="primer_apellido_empleado" id="primer_apellido_empleado" >
+				<label for="firstName">Segundo Apellido:</label>
+				<input type="text" class="form-control" name="segundo_apellido_empleado" id="segundo_apellido_empleado" >
+				<label for="firstName">Edad:</label>
+				<input type="text" class="form-control" name="edad" id="edad" >
+				<label for="firstName">Cargo:</label>
+				<input type="text" class="form-control" name="cargo" id="cargo" >
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary" onclick="saveChanges()">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnClose">Cerrar</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteEmployee()">Eliminar</button>
+                </div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	</div>
+	  
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+	<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>	
+    <script src="js/custom.min.js"></script>
+	<script src="js/deznav-init.js"></script>
+	
+    <script>
+ //vista de la tabla
+ document.addEventListener('DOMContentLoaded', function() {
+    fetch('php/empleados_vista.php')
+        .then(response => response.json())  
+        .then(data => {
+            if(data.error) {
+                alert(data.error);
+                return;
+            }
+
+            let tablaEmpleados = document.getElementById('tablaEmpleados');
+            let current_page = 1;
+            let rows_per_page = 20; // Setea el límite de filas por página
+
+            function showRows(start, end) {
+                tablaEmpleados.innerHTML = ''; // Limpiar la tabla antes de agregar filas
+                for (let i = start; i < end && i < data.length; i++) {
+                    let fila = document.createElement('tr');
+
+                    // Crear y añadir checkbox a la fila
+                    let celdaCheckbox = document.createElement('td');
+                    let checkbox = document.createElement('input');
+                    checkbox.type = "checkbox";
+                    checkbox.addEventListener('change', function() {
+                        if(this.checked) {
+                            // Acción al seleccionar el checkbox
+                            openModalAndLoadData(data[i]);
+                        }
+                    });
+                    celdaCheckbox.appendChild(checkbox);
+                    fila.appendChild(celdaCheckbox);
+
+                    // Insertar datos del lista_control
+                    for (let clave in data[i]) {
+                        let celda = document.createElement('td');
+                        celda.innerText = data[i][clave];
+                        fila.appendChild(celda);
+                    }
+                    tablaEmpleados.appendChild(fila);
+                }
+            }
+
+            function changePage(direction) {
+                current_page += direction;
+                
+                // Validar páginas
+                let total_pages = Math.ceil(data.length / rows_per_page);
+                if (current_page > total_pages) {
+                    current_page = total_pages;
+                } else if (current_page < 1) {
+                    current_page = 1;
+                }
+
+                let start = (current_page - 1) * rows_per_page;
+                let end = start + rows_per_page;
+                showRows(start, end);
+            }
+
+            // Añadir los listeners para los botones de paginación aquí
+            document.getElementById('prevBtn').addEventListener('click', function () {
+                changePage(-1);
+            });
+
+            document.getElementById('nextBtn').addEventListener('click', function () {
+                changePage(1);
+            });
+
+            // Mostrar la primera página de resultados
+            showRows(0, rows_per_page);
+        })
+        .catch(error => console.error('Error fetching data: ', error));
+});
+
+//modal
+function openModalAndLoadData(empleado) {
+    // Cargar datos en el formulario del modal
+    document.getElementById('id_empleado').value = empleado.id_empleado;
+    document.getElementById('primer_nombre_empleado').value = empleado.primer_nombre_empleado;
+    document.getElementById('segundo_nombre_empleado').value = empleado.segundo_nombre_empleado;
+    document.getElementById('primer_apellido_empleado').value = empleado.primer_apellido_empleado;
+    document.getElementById('segundo_apellido_empleado').value = empleado.segundo_apellido_empleado;
+    document.getElementById('edad').value = empleado.edad;
+    document.getElementById('cargo').value = empleado.cargo;
+    
+    // Muestra el modal
+    $('#editModal').modal('show');
+}
+
+// guardar empleado
+function saveChanges() {
+    if ($("#primer_nombre_empleado").val() === "") {
+        alert("Por favor, introduce el primer nombre.");
+        return false;
+    }
+    $.ajax({
+        type: 'POST',
+        url: "php/editar_empleado_control.php",
+        data: $('#editForm').serialize(),
+        dataType: 'json',  // Asegúrate de que esperas una respuesta JSON.
+        success: function(response) {
+            if(response.success) {
+                alert(response.message);
+                // Otros manejadores de éxito pueden ir aquí.
+            } else {
+                alert("Error: " + response.message);
+            }
+        },
+        error: function(error) {
+            alert("Algo salió mal.");
+            console.log(error);
+        }
+    });
+}
+
+
+// Eliminar empleado
+function deleteEmployee() {
+    var id_empleado = $("#id_empleado").val();
+    if(confirm("¿Estás seguro de que deseas eliminar este empleado?")) {
+        $.ajax({
+            type: 'POST',
+            url: "php/eliminar_empleado.php",
+            data: {id_empleado: id_empleado},
+            success: function(response) {
+            console.log("Respuesta del servidor:", response);  
+            if(response.status == "success") {
+            alert("Empleado eliminado exitosamente");
+            location.reload();
+            } else if(response.status == "warning") {
+            alert("Advertencia: " + response.message);
+            } else {
+            alert("Error al eliminar el empleado");
+            }
+            },
+        });
+    }
+}
+
+
+//Cerrar modal
+$(document).ready(function() {
+    $("#btn-cerrar-modal").click(function() {
+        // Si necesitas hacer algo más cuando el modal se cierra, hazlo aquí.
+        $("#editModal").modal('hide'); // Esto cierra el modal
+    });
+});
+
+
+//Cerrar modal con boton
+$(document).ready(function() {
+    $("#btnClose").click(function() {
+        $("#editModal").modal('hide'); // Cierra el modal
+        $('#editForm')[0].reset(); // Restablece el formulario
+        // Agregar cualquier lógica adicional necesaria aquí...
+    });
+});
+
+
+// cantidad empleados
+console.log("Script cargado");
+
+$(document).ready(function(){
+    console.log("Documento cargado, ejecutando AJAX...");
+    $.ajax({
+        type: 'GET',
+        url: "php/cantidad_empleados.php",
+        success: function(response) {
+            console.log("Respuesta del servidor:", response);
+            $('#total_Empleados').text(response + ' Empleados');
+        },
+        error: function(xhr, status, error) {
+            console.log("XHR:", xhr);
+            console.log("Status:", status);
+            console.log("Error:", error);
+            $('#total_Empleados').text("Error al cargar los datos");
+        }
+    });
+});
+
+
+//Busqueda
+$(document).ready(function() {
+    $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tablaEmpleados tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
+
+
+// Iniciar
+showRows(document.getElementById('example5').tBodies[0].getElementsByTagName('tr'));
+
+document.getElementById('searchInput').addEventListener('input', function(e) {
+    let filter = e.target.value.toUpperCase();
+    let table = document.getElementById('example5');
+    let trs = table.tBodies[0].getElementsByTagName('tr');
+
+    // Búsqueda
+    for (let i = 0; i < trs.length; i++) {
+        let tds = trs[i].getElementsByTagName('td');
+        let found = false;
+        for (let j = 0; j < tds.length; j++) {
+            if (tds[j].textContent.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+                break;
+            }
+        }
+        trs[i].style.display = found ? "" : "none";
+    }
+
+    // Reseteo la paginación al filtrar
+    current_page = 1;
+    showRows(trs);
+});
+
+
+// formulario para editar
+    document.addEventListener('DOMContentLoaded', function () {
+        // Agrega un evento de click a todos los botones de edición.
+        document.querySelectorAll('.editButton').forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                const empId = e.target.getAttribute('data-empid');
+                
+                // Opcional: Carga los datos actuales del empleado usando `empId` y asigna los valores al formulario.
+                
+                // Muestra el modal.
+                $('#editModal').modal('show');
+            });
+        });
+    });
+
+	document.addEventListener("DOMContentLoaded", function(){
+            fetch('php/editar_empleado_vista.php')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('primer_nombre').value = data.primer_nombre_empleado;
+                document.getElementById('segundo_nombre').value = data.segundo_nombre_empleado;
+                document.getElementById('primer_apellido').value = data.primer_apellido_empleado;
+                document.getElementById('segundo_apellido').value = data.segundo_apellido_empleado;
+                document.getElementById('edad').value = data.edad;
+                document.getElementById('cargo').value = data.cargo;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        window.onload = function() {
+        // Parsea los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Obtiene el parámetro de error
+        const error = urlParams.get('error');
+
+        // Si hay un mensaje de error, lo muestra
+        if(error) {
+            document.getElementById('error-message').innerText = error;
+            document.getElementById('error-message').style.display = 'block';
+        }
+    }
+
+
+</script>  
+</body>
+</html>
